@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for session in $(screen -ls | grep Detached | grep -v installer | cut -d. -f1); do screen -S "${session}" -X quit; done
 screen -dmS socks python /etc/socks.py 90
 screen -dmS websocket python /usr/local/sbin/websocket.py 8081
